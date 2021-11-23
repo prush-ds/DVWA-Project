@@ -41,6 +41,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the ELK machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 
 - 20.106.78.168
 
 Machines within the network can only be accessed by Jump Box Provisioner.
@@ -53,6 +54,8 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | No                  | 10.0.0.7             |
 | Web-1    | No                  | 10.0.0.9             |
 | Web-2    | No                  | 10.0.0.10            |
+
+
 
 ### Elk Configuration
 
