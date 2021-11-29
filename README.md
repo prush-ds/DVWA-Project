@@ -71,30 +71,26 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+(https://github.com/prush-ds/DVWA-Project/blob/main/diagrams/elk.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- web machines
+- Web 1
+- Web 2
 
 We have installed the following Beats on these machines:
-- file beat
-- metric beat
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. In case of network issues or interruptions in transmissions, Filebeat will remember where it left off when re-establishing a connection. If there is an ingestion issue with the output, Logstash or Elasticsearch, Filebeat will slow down the reading of files.
+- Metricbeat takes the metrics and statistics that it collects and ships them to Elasticsearch or Logstash. Metricbeat helps monitor servers by collecting metrics from the system and services running on the ELK server. You’ll see cluster alerts that require your attention and a summary of the available monitoring metrics for Elasticsearch, Logstash, and Kibana. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the filebeat-playbook.yml and metricbeat-playbook.yml file to roles.
+- Update the Ansible playbook to run on a specific machine. Use the install-elk.yml file to specify install on the ELK server and the filebeat-config.yml to install Filebeat. 
+- Run the playbook, and navigate to http://20.106.78.186:5601/app/kibana#/home
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
