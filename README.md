@@ -53,24 +53,21 @@ Machines within the network can only be accessed by the Jump Box Provisioner.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name          | Publicly Accessible | Allowed IP Addresses |
-|----------     |---------------------|----------------------|
-| Jump Box      | Yes                 | 10.0.0.7             |
-| Web-1         | No                  | 10.0.0.9             |
-| Web-2         | No                  | 10.0.0.10    
-| Load Balancer  
-
-
-
+| Name                | Publicly Accessible | Allowed IP Addresses |
+|---------------------|---------------------|----------------------|
+| Jump Box            | Yes                 | 20.80.191.69         |
+| Web-1               | No                  | 10.0.0.9             |
+| Web-2               | No                  | 10.0.0.10            |
+| Azure Load Balancer | Yes                 | 20.112.95.85         |  
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the feedback loop is accelerated at a faster rate, bugs are found sooner and not wait till the end, risk due to lack of sufficient knowledge is mitigated, the deployments are reliable, IT infrastructure is coordinated, and deployments are faster.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Python Docker Module
+- Download and launch the Docker container
+- Enable docker srvice
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
