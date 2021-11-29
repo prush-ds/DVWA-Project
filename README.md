@@ -29,23 +29,27 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.7   | Linux            |
-| ELK      | Logging  | 10.2.0.4   | Linux            |
-| Web-1    | Computer | 10.0.0.9   | Linux            |
-| Web-2    | Computer | 10.0.0.10  | Linux            |
+| Name                 | Function | Private IP Address | Public IP Address | Operating System |
+|----------------------|----------|--------------------|------------------ |------------------
+| Jump Box Provisioner | Gateway  | 10.0.0.7           | 51.143.3.171      | Linux            |
+| ELK                  | Logging  | 10.2.0.4           | 20.106.78.186     | Linux            |
+| Web-1                | Computer | 10.0.0.9           | 20.69.103.226     | Linux            |
+| Web-2                | Computer | 10.0.0.10          | 20.69.120.175     | Linux            |
+| Load Balancer        | Computer | 10.0.0.10          | 20.112.95.85      | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the ELK machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 
-- 20.106.78.168
+The Jump Box Provisioner, ELK, Web-1, Web-2, and Red Team Load Balancer can be accessed from the internet when the machines are started in Microsoft Azure. The public IP addresses for each machine when they are started are listed as followed: (Name, Public IP Address)
+- Jump Box Provisioner, 51.143.3.171
+- ELK, 20.106.78.168
+- Web-1, 20.69.103.226 
+- Web-2, 20.69.120.175
+- Load Balancer, 20.112.95.85
 
-Machines within the network can only be accessed by Jump Box Provisioner.
-- 52.183.18.67
+Machines within the network can only be accessed by the Jump Box Provisioner.
+- The Jump Box Provisioner IP address goes as follows: 52.183.18.67
 
 A summary of the access policies in place can be found in the table below.
 
